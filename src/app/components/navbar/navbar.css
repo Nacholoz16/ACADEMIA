@@ -1,0 +1,14 @@
+.mega-menu {
+  width: 600px;
+  max-height: 400px;
+  overflow-y: auto;
+
+  a.dropdown-item {
+    transition: background 0.2s ease;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: #eafaff;
+    }
+  }
+}

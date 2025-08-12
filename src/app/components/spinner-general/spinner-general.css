@@ -1,0 +1,64 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.typewriter {
+  display: inline-flex;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+
+.letter {
+  opacity: 0;
+  animation: aparecer 0.6s forwards;
+}
+
+/* Animaciones secuenciales por letra */
+.letter:nth-child(1) {
+  animation-delay: 0s;
+}
+.letter:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.letter:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.letter:nth-child(4) {
+  animation-delay: 0.45s;
+}
+.letter:nth-child(5) {
+  animation-delay: 0.6s;
+}
+.letter:nth-child(6) {
+  animation-delay: 0.75s;
+}
+.letter:nth-child(7) {
+  animation-delay: 0.9s;
+}
+.letter:nth-child(8) {
+  animation-delay: 1.05s;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.backdrop.hide {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}

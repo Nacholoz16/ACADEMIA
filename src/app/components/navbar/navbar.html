@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg bg-white border-bottom px-3 py-2 sticky-top">
+  <div class="container-fluid">
+    
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center fw-bold fs-4 text-dark" href="#">
+      <span style="color: #0670a5;">ACADEM</span><span class="text-info">IA</span>
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      aria-label="Toggle navigation"
+      (click)="toggleCollapse()"
+      [attr.aria-expanded]="!isCollapsed()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Contenido colapsable -->
+    <div
+      [class.collapse]="isCollapsed()"
+      class="navbar-collapse"
+    >
+      <!-- Botón "Explorar" con megamenú -->
+      <div ngbDropdown class="me-lg-3 my-2 my-lg-0">
+        <button
+          class="btn btn-outline-info fw-medium w-100 w-lg-auto"
+          id="explorarDropdown"
+          ngbDropdownToggle
+        >
+          Explorar
+        </button>
+        <div ngbDropdownMenu class="mega-menu shadow-lg border-0 rounded-3 p-3">
+          <div class="row">
+            @for (col of categorias; track col) {
+              <div class="col-12 col-md-4">
+                <a
+                  class="dropdown-item py-2"
+                  [ngClass]="{ 'fw-bold text-dark': paginaActiva === col }"
+                  href="#"
+                >
+                  {{ col }}
+                </a>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Buscador -->
+      <form class="flex-grow-1 mx-lg-3 my-2 my-lg-0">
+        <input
+          class="form-control border-info"
+          type="search"
+          placeholder="Buscar cursos..."
+          aria-label="Buscar"
+        />
+      </form>
+
+      <!-- Avatar + menú -->
+      <div ngbDropdown class="d-flex align-items-center my-2 my-lg-0">
+        <img
+          src="https://i.pravatar.cc/40"
+          class="rounded-circle me-2"
+          alt="Avatar"
+          style="width: 40px; height: 40px; cursor: pointer"
+          ngbDropdownToggle
+          id="avatarDropdown"
+        />
+        <div ngbDropdownMenu class="dropdown-menu-end shadow-sm">
+          <button class="dropdown-item" (click)="irA('mis-cursos')">Mis cursos</button>
+          <button class="dropdown-item" (click)="irA('carrito')">Mi carrito</button>
+          <button class="dropdown-item" (click)="irA('mensajes')">Mensajes</button>
+          <button class="dropdown-item" (click)="irA('notificaciones')">Notificaciones</button>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" (click)="irA('configuracion')">Configuración de cuenta</button>
+          <button class="dropdown-item" (click)="irA('pagos')">Métodos de pago</button>
+          <button class="dropdown-item" (click)="irA('suscripcion')">Suscripción</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
