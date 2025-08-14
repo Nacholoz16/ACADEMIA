@@ -1,6 +1,6 @@
 <app-spinner-general [cargando]="cargandoCursos" [minTimeMs]="2000" />
 
-<section class="position-relative mt-5" style="min-height: 320px;">
+<section class="position-relative mt-5 " style="min-height: 320px;">
   <img
     [src]="curso()?.urlImagenPortada"
     class="img-fluid w-100"
@@ -123,38 +123,39 @@
     </div>
     
     <!-- Columna derecha -->
-    <div class="col-12 col-lg-4">
-      <section class="card border-info shadow-lg rounded-3 sticky-top" style="top: 1rem;">
-        <div class="card-header bg-info bg-opacity-10 text-center py-3">
-          <h5 class="card-title mb-0 text-info-emphasis fw-bold">Conviértete en experto</h5>
-        </div>
-        <div class="card-body p-4">
-          <h3 class="display-6 fw-bold text-info text-center mb-4">
-            {{ curso()?.precio | currency : curso()?.moneda }}
-          </h3>
-          <ul class="list-group list-group-flush mb-4">
-            <li class="list-group-item border-0 d-flex align-items-center">
-              <i class="bi bi-camera-reels-fill text-info me-2"></i>
-              Acceso a todas las lecciones
-            </li>
-            <li class="list-group-item border-0 d-flex align-items-center">
-              <i class="bi bi-patch-check-fill text-info me-2"></i>
-              Certificado al finalizar
-            </li>
-            <li class="list-group-item border-0 d-flex align-items-center">
-              <i class="bi bi-arrow-clockwise text-info me-2"></i>
-              Acceso de por vida
-            </li>
-          </ul>
-          <button
-            class="btn btn-info btn-lg w-100 text-white fw-semibold"
-            (click)="comprarCurso()"
-          >
-            {{ comprado() ? 'Empezar curso' : 'Comprar ahora' }}
-          </button>
-        </div>
-      </section>
+<div class="col-12 col-lg-4 pt-5">
+  <section class="card border-info shadow-lg rounded-3 card-lateral">
+    <div class="card-header bg-info bg-opacity-10 text-center py-3">
+      <h5 class="card-title mb-0 text-info-emphasis fw-bold">Conviértete en experto</h5>
     </div>
+    <div class="card-body p-4">
+      <h3 class="display-6 fw-bold text-info text-center mb-4">
+        {{ curso()?.precio | currency : curso()?.moneda }}
+      </h3>
+      <ul class="list-group list-group-flush mb-4">
+        <li class="list-group-item border-0 d-flex align-items-center">
+          <i class="bi bi-camera-reels-fill text-info me-2"></i>
+          Acceso a todas las lecciones
+        </li>
+        <li class="list-group-item border-0 d-flex align-items-center">
+          <i class="bi bi-patch-check-fill text-info me-2"></i>
+          Certificado al finalizar
+        </li>
+        <li class="list-group-item border-0 d-flex align-items-center">
+          <i class="bi bi-arrow-clockwise text-info me-2"></i>
+          Acceso de por vida
+        </li>
+      </ul>
+      <button
+        class="btn btn-info btn-lg w-100 text-white fw-semibold"
+        (click)="comprarCurso()"
+      >
+        {{ comprado() ? 'Empezar curso' : 'Comprar ahora' }}
+      </button>
+    </div>
+  </section>
+</div>
+
 
   </div>
 </div>

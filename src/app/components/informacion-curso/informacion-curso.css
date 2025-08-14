@@ -1,1 +1,5 @@
- 
+.card-lateral {
+  position: sticky;
+  top: 80px; /* altura del navbar, ajusta si tu navbar es más alto */
+  z-index: 100; /* menor que el navbar */
+}

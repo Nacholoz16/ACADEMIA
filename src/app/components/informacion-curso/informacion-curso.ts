@@ -25,6 +25,7 @@ export class InformacionCurso {
   cargandoCursos = true
 
   ngOnInit(): void {
+
     const idCurso = this.route.snapshot.paramMap.get('id');
     if (idCurso) {
       console.log("id obtenido: ", idCurso)
