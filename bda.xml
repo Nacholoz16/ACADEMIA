@@ -1,0 +1,110 @@
+<PortalCursos>
+  <!-- Tabla de Usuarios -->
+  <Usuarios>
+    <Usuario id="u1">
+      <nickname>jdoe</nickname>
+      <nombres>John</nombres>
+      <apaterno>Doe</apaterno>
+      <amaterno>Smith</amaterno>
+      <foto>/assets/usuarios/jdoe.jpg</foto>
+      <contrasena>hashed_password</contrasena>
+      <email>jdoe@example.com</email>
+      <esInstructor>false</esInstructor>
+      <habilitado>true</habilitado>
+    </Usuario>
+    <Usuario id="u2">
+      <nickname>jperez</nickname>
+      <nombres>Juan</nombres>
+      <apaterno>Pérez</apaterno>
+      <amaterno>García</amaterno>
+      <foto>/assets/instructores/juan-perez.jpg</foto>
+      <contrasena>hashed_password</contrasena>
+      <email>juanp@example.com</email>
+      <esInstructor>true</esInstructor>
+      <habilitado>true</habilitado>
+    </Usuario>
+  </Usuarios>
+
+  <!-- Tabla de Categorías -->
+  <Categorias>
+    <Categoria id="c1" nombre="Informática" />
+    <Categoria id="c2" nombre="Diseño" />
+  </Categorias>
+
+  <!-- Tabla de Cursos -->
+  <Cursos>
+    <Curso id="curso-1" categoriaId="c1" instructorId="u2">
+      <titulo>Fundamentos de Informática</titulo>
+      <subtitulo>Aprende los conceptos básicos de la informática moderna</subtitulo>
+      <descripcion>
+        Este curso te enseñará los fundamentos de la informática, desde hardware y software hasta redes y seguridad.
+      </descripcion>
+      <precio>49.99</precio>
+      <moneda>USD</moneda>
+      <idioma>Español</idioma>
+      <nivel>Principiante</nivel>
+      <fechaActualizacion>2025-01-15</fechaActualizacion>
+      <urlImagenPortada>/assets/cursos/informatica.jpg</urlImagenPortada>
+      <loQueAprenderas>
+        <item>Entender cómo funciona un computador</item>
+        <item>Diferenciar hardware y software</item>
+        <item>Conceptos básicos de redes</item>
+      </loQueAprenderas>
+      <requisitos>
+        <item>Ninguno</item>
+      </requisitos>
+      <aQuienVaDirigido>
+        <item>Estudiantes</item>
+        <item>Personas interesadas en tecnología</item>
+      </aQuienVaDirigido>
+      <unidades>
+        <Unidad id="u1">
+          <titulo>Introducción a la informática</titulo>
+          <objetivo>Comprender los conceptos básicos de informática</objetivo>
+          <lecciones>
+            <Leccion id="l1" tipo="video">
+              <titulo>¿Qué es la informática?</titulo>
+              <urlVideo>https://example.com/video1</urlVideo>
+              <duracionEnMinutos>10</duracionEnMinutos>
+              <recursos />
+            </Leccion>
+            <Leccion id="l2" tipo="articulo">
+              <titulo>Hardware y software</titulo>
+              <duracionEnMinutos>15</duracionEnMinutos>
+              <contenidoHtml><![CDATA[<p>Diferencias entre hardware y software...</p>]]></contenidoHtml>
+              <recursos />
+            </Leccion>
+          </lecciones>
+        </Unidad>
+        <Unidad id="u2">
+          <titulo>Fundamentos de la informática</titulo>
+          <objetivo>Comprender los fundamentos de informática</objetivo>
+          <lecciones>
+            <Leccion id="l1" tipo="video">
+              <titulo>¿Qué es la informática?</titulo>
+              <urlVideo>https://example.com/video1</urlVideo>
+              <duracionEnMinutos>10</duracionEnMinutos>
+              <recursos />
+            </Leccion>
+            <Leccion id="l2" tipo="articulo">
+              <titulo>Hardware y software</titulo>
+              <duracionEnMinutos>15</duracionEnMinutos>
+              <contenidoHtml><![CDATA[<p>Diferencias entre hardware y software...</p>]]></contenidoHtml>
+              <recursos />
+            </Leccion>
+          </lecciones>
+        </Unidad>
+      </unidades>
+    </Curso>
+  </Cursos>
+
+  <!-- Tabla de Suscripciones -->
+  <Suscripciones>
+    <Suscripcion id="s1" usuarioId="u1" fechaInicio="2025-01-01" fechaFin="2025-12-31" activa="true" />
+  </Suscripciones>
+
+  <!-- Relación de cursos comprados -->
+  <CursosComprados>
+    <Compra usuarioId="u1" cursoId="curso-1" fechaCompra="2025-02-01" avance="30" />
+  </CursosComprados>
+</PortalCursos>
